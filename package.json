@@ -1,0 +1,32 @@
+{
+  "name": "redux-toolkit-helpers",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "redux-toolkit helpers",
+  "main": "dist/index.js",
+  "keywords": [
+    "redux",
+    "toolkit",
+    "slice"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/UsefulWeb/redux-toolkit-helpers.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/UsefulWeb/redux-toolkit-helpers/issues"
+  },
+  "homepage": "https://github.com/UsefulWeb/redux-toolkit-helpers#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.5.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
+}
