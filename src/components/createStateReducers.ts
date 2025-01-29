@@ -1,9 +1,6 @@
 import type { CaseReducer, CreateSliceOptions, PayloadAction, SliceCaseReducers } from "@reduxjs/toolkit"
 import { createSliceReducer } from "./createSliceReducer"
 
-type Reducers<State, CR extends SliceCaseReducers<State>> = 
-  CreateSliceOptions<State, CR>['reducers']
-
 type CaseReducers<State> = {
   [K in keyof State as 
     K extends string ? `set${Capitalize<K>}` : never
