@@ -10,13 +10,11 @@ type CaseReducers<State> = {
   ]-?: CaseReducer<State, PayloadAction<State[K]>> 
 }
 
-type ValidReturnType<State> = Reducers<State, CaseReducers<State>>
-
 export const createStateReducers = <State, K extends keyof State>
-  (keys: K[]): ValidReturnType<Pick<State, K>> => {
+  (keys: K[]): CaseReducers<Pick<State, K>> => {
     type SliceReducer = CaseReducer<State, PayloadAction<State[K]>>;
 
-    const data = keys.reduce<Record<string, SliceReducer>>((target, key) => {
+    const data: unknown = keys.reduce<Record<string, SliceReducer>>((target, key) => {
       if (typeof key !== 'string') {
         return target;
       }
@@ -26,5 +24,5 @@ export const createStateReducers = <State, K extends keyof State>
       return target;
     }, {});
 
-    return data as ValidReturnType<Pick<State, K>>;
+    return data as CaseReducers<Pick<State, K>>;
   }
